@@ -22,7 +22,8 @@ html {
 
 /* stylelint-disable */
 body {
-	background: #333;
+	/* background: #ffd900; */
+	background: #9b59b6;
 	/* Fallback for when there is no custom background color defined. */
 }
 /* stylelint-enable */

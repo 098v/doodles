@@ -60,7 +60,8 @@
 	text-decoration: none;
 	top: 5px;
 	width: auto;
-	z-index: 100000; /* Above WP toolbar. */
+	z-index: 100000;
+	/* Above WP toolbar. */
 }
 
 /* Do not show the outline on the skip link target. */
@@ -110,6 +111,7 @@
 textarea {
 	width: 100%;
 }
+
 /* stylelint-enable */
 
 /* stylelint-disable */
@@ -127,6 +129,7 @@ input[type="submit"] {
 	padding: 0.6em 1em 0.4em;
 	cursor: pointer;
 }
+
 /* stylelint-enable */
 
 button:hover,
@@ -227,11 +230,13 @@ select {
 	font-weight: 700;
 	line-height: 1.2;
 	text-transform: capitalize;
+	border-radius: 50px;
+	text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.125);
 }
 
 .site-title a {
 	text-decoration: none;
-	color: inherit;
+	color: var(--global-font-color-dark);
 }
 
 .site-description {
@@ -242,7 +247,7 @@ select {
 	font-weight: inherit;
 	line-height: 1.4;
 	word-wrap: break-word;
-	color: #757575;
+	color: var(--global-font-color-dark);
 }
 
 /*--------------------------------------------------------------
@@ -274,6 +279,15 @@ select {
 
 	.nav--toggle-small.nav--toggled-on .menu {
 		display: block;
+	}
+
+	/*--------------------------------------------------------------
+	## Webcomic mobile nav fix
+	--------------------------------------------------------------*/
+	.webcomic-navigation .widget {
+		margin: 0;
+		/* Stupid fix, find better alternative */
+		max-width: 1.125em !important;
 	}
 }
 
@@ -356,9 +370,9 @@ select {
 	 * If the dropdown toggle is active with JS, then
 	 * we'll take care of showing the submenu with JS.
 	 */
-	.nav--toggle-sub li:hover > ul,
-	.nav--toggle-sub li.menu-item--toggled-on > ul,
-	.nav--toggle-sub li:not(.menu-item--has-toggle):focus > ul {
+	.nav--toggle-sub li:hover>ul,
+	.nav--toggle-sub li.menu-item--toggled-on>ul,
+	.nav--toggle-sub li:not(.menu-item--has-toggle):focus>ul {
 		display: block;
 	}
 
@@ -370,7 +384,7 @@ select {
 	 * This selector needs to stay separated, otherwise submenus
 	 * will not be displayed with IE/Edge.
 	 */
-	.nav--toggle-sub li:not(.menu-item--has-toggle):focus-within > ul {
+	.nav--toggle-sub li:not(.menu-item--has-toggle):focus-within>ul {
 		display: block;
 	}
 }
@@ -392,7 +406,7 @@ select {
 	width: 100%;
 	padding: 0.5em 1em 0.5em 0;
 	text-decoration: none;
-	color: var(--global-font-color);
+	color: var(--global-font-color-dark);
 }
 
 .main-navigation a:hover,
@@ -400,8 +414,8 @@ select {
 	text-decoration: underline;
 }
 
-.main-navigation .current-menu-item > a,
-.main-navigation .current-menu-ancestor > a {
+.main-navigation .current-menu-item>a,
+.main-navigation .current-menu-ancestor>a {
 	font-weight: 600;
 }
 
@@ -439,6 +453,7 @@ select {
 		padding-left: 0;
 		margin-left: 0;
 	}
+
 	/* stylelint-enable */
 
 	.main-navigation ul ul li a {
@@ -466,7 +481,7 @@ select {
 .site-main .posts-navigation,
 .site-main .post-navigation,
 .site-main .pagination {
-	border-bottom: 1px solid var(--border-color-dark);
+	/* border-bottom: 1px solid var(--border-color-dark); */
 	margin: 0 auto 2em;
 	max-width: var(--content-width);
 	overflow: hidden;
@@ -487,7 +502,7 @@ select {
 }
 
 .nav-links {
-	display: flex;
+	display: none;
 }
 
 .comment-navigation .nav-previous,
@@ -563,6 +578,18 @@ select {
 
 .pagination .current {
 	border-color: var(--border-color-dark);
+}
+
+/*--------------------------------------------------------------
+# Webcomic navigation
+--------------------------------------------------------------*/
+.webcomic-navigation .widget {
+	margin: 2em 1.125em;
+	max-width: var(--content-width);
+	overflow: hidden;
+	padding: 0;
+	/* Stupid fix, find a better alternative */
+	flex: 0 0 auto !important;
 }
 
 /*--------------------------------------------------------------
